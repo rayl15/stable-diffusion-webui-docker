@@ -58,6 +58,8 @@ RUN \
   sed -i 's/in_app_dir = .*/in_app_dir = True/g' /opt/conda/lib/python3.10/site-packages/gradio/routes.py && \
   git config --global --add safe.directory '*'
 
+# I will move this pip install typing-extensions to a better place, this is quick and dirty work for POC.
+RUN pip install typing-extensions
 WORKDIR ${ROOT}
 ENV NVIDIA_VISIBLE_DEVICES=all
 ENV CLI_ARGS=""
